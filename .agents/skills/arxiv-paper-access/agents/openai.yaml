@@ -1,4 +1,0 @@
-interface:
-  display_name: "arXiv Paper Access"
-  short_description: "Find arXiv papers by title or ID and download PDFs"
-  default_prompt: "Use $arxiv-paper-access to resolve a paper title or arXiv ID against arXiv metadata and download the PDF when the match is confident."
