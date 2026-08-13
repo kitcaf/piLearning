@@ -1,0 +1,24 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="l3" value="第三层 pi-protocol（实验性）—— 可远程&#10;CBOR + 帧协议 + schema，面向 web / 远程客户端" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="160" y="40" width="500" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="l2" value="第二层 pi-server（supervisor）—— 可托管&#10;常驻守护进程 + unix socket IPC，管理 N 个 RPC 子进程" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="160" y="190" width="500" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="l1" value="第一层 pi --mode rpc（coding-agent 内）—— 可编程&#10;JSONL over stdin/stdout，每个实例 = 一个子进程" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="160" y="340" width="500" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" value="IPC 请求" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="l3" target="l2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" value="spawn + stdio 管道" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="l2" target="l1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="自下而上读：每层复用前一层已有的接口，上层与任何第三方调用方毫无区别" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="110" y="440" width="600" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,36 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="n1" value="组件调 requestRender()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="200" y="40" width="420" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="n2" value="TuiBase.doRender()&#10;render(width) → newLines：全量重新生成&#10;compositeOverlays()：弹窗字符级合成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="200" y="170" width="420" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="n3" value="与 previousLines 逐行比较&#10;找出变化区间 [firstChanged, lastChanged]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="200" y="310" width="420" height="64" as="geometry"/>
+    </mxCell>
+    <mxCell id="n4" value="只把变化区间的行写给终端&#10;（包在同步输出协议里，原子上屏）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="200" y="434" width="420" height="64" as="geometry"/>
+    </mxCell>
+    <mxCell id="n5" value="previousLines = newLines&#10;（下一帧的比较基准）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="200" y="558" width="420" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" value="合并 16ms 内的重复请求（≈60fps 节流）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="n1" target="n2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="n2" target="n3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="n3" target="n4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="n4" target="n5">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="生成是全量的，输出是增量的：优化只做在真正贵的终端写出端" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="160" y="640" width="500" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

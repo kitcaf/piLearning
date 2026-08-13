@@ -1,0 +1,75 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="t1" value="日志（写入顺序，只追加）" style="text;html=1;fontSize=15;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="30" width="300" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="l1" value="e1：user「写个爬虫」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="70" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l2" value="e2：assistant + toolCall" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="118" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l3" value="e3：toolResult" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="166" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l4" value="e4：assistant「写完了」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="214" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l5" value="e5：user「换个思路」(parent=e2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="262" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l6" value="e6：assistant …" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="310" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="l7" value="leaf → e6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;dashed=1;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="40" y="358" width="300" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="t2" value="树（parentId 视角）" style="text;html=1;fontSize=15;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="440" y="30" width="480" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="n1" value="e1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="440" y="90" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="n2" value="e2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="570" y="90" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="n3" value="e3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="90" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="n4" value="e4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="830" y="90" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="n5" value="e5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="210" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="n6" value="e6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="830" y="210" width="80" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="te1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n1" target="n2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="te2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n2" target="n3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="te3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n3" target="n4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="te4" value="用户从 e2 回退后的新分支" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="n2" target="n5">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="te5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n5" target="n6">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="leafp" value="leaf 指针" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;dashed=1;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="830" y="310" width="80" height="36" as="geometry"/>
+    </mxCell>
+    <mxCell id="te6" value="决定&quot;当前对话&quot;是哪条路径" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="leafp" target="n6">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="回退不删除任何记录：只移动 leaf 指针，旧分支 e3–e4 完好保留" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="420" y="380" width="520" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

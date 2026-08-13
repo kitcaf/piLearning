@@ -1,0 +1,36 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="sess" value="AgentSession" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="180" width="200" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="rt" value="&lt;b&gt;ModelRuntime（实现 Models 接口）&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=17;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+      <mxGeometry x="360" y="30" width="500" height="400" as="geometry"/>
+    </mxCell>
+    <mxCell id="rc" value="RuntimeCredentials（内存覆盖层）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="390" y="90" width="440" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="as" value="AuthStorage：auth.json（0600）+ 进程间文件锁" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="430" y="144" width="400" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="mc" value="ModelConfig（models.json 用户配置）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="390" y="212" width="440" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="pc" value="provider-composer：与内置厂商目录合成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="430" y="266" width="400" height="42" as="geometry"/>
+    </mxCell>
+    <mxCell id="sn" value="snapshot（可用性快照，喂 UI 模型选择器）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="390" y="334" width="440" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" value="streamSimple / getAuth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sess" target="rt">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.05;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="rc" target="as">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.05;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="mc" target="pc">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

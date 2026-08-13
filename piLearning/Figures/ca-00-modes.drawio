@@ -1,0 +1,45 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="cli" value="cli.ts → main.ts&#10;参数解析 · 配置 · 信任检查" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="250" y="40" width="340" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="factory" value="createAgentSession()（core/sdk.ts，装配工厂）&#10;产出核心对象 AgentSession" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="250" y="170" width="340" height="64" as="geometry"/>
+    </mxCell>
+    <mxCell id="m1" value="InteractiveMode&#10;TUI 渲染事件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="60" y="310" width="220" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="m2" value="runPrintMode&#10;文本 / JSON 输出后退出" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="310" y="310" width="220" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="m3" value="runRpcMode&#10;JSONL 双向协议（第五章）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="560" y="310" width="220" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="shared" value="全部消费同一个 AgentSession 事件流 —— 模式只是不同的 I/O 皮肤" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="60" y="450" width="720" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cli" target="factory">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="factory" target="m1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="factory" target="m2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="factory" target="m3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="m1" target="shared">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="m2" target="shared">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="m3" target="shared">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

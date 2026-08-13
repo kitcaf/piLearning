@@ -1,0 +1,39 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="s1" value="默认骨架&#10;身份 + 工具清单 + guidelines + pi 文档指路" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="40" width="460" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="s2" value="+ appendSystemPrompt（CLI --append-system-prompt / 设置）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="140" width="460" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="s3" value="+ &amp;lt;project_context&amp;gt;（AGENTS.md 链，近者优先）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="230" width="460" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="s4" value="+ &amp;lt;available_skills&amp;gt;（技能清单，渐进式披露）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="320" width="460" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="s5" value="+ Current working directory: …" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="410" width="460" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="out" value="系统提示词（每轮实时投影，扩展可临时改写）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="510" width="460" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s1" target="s2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s2" target="s3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s3" target="s4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s4" target="s5">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e5" value="按固定顺序拼接" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="s5" target="out">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

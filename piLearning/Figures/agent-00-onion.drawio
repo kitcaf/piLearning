@@ -1,0 +1,18 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="harness" value="&lt;b&gt;AgentHarness（harness/agent-harness.ts）— 装配层&lt;/b&gt;&#10;会话持久化 · 系统提示词 · 技能/模板 · 钩子" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+      <mxGeometry x="60" y="40" width="680" height="400" as="geometry"/>
+    </mxCell>
+    <mxCell id="agent" value="&lt;b&gt;Agent（agent.ts）— 状态层&lt;/b&gt;&#10;state · subscribe · steer / followUp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+      <mxGeometry x="100" y="140" width="600" height="270" as="geometry"/>
+    </mxCell>
+    <mxCell id="loop" value="&lt;b&gt;agentLoop（agent-loop.ts）— 纯函数层&lt;/b&gt;&#10;循环 · 工具执行 · 事件发出&#10;（无状态、无 IO 依赖、可单独使用）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=16;verticalAlign=top;spacingTop=14;" vertex="1" parent="1">
+      <mxGeometry x="140" y="250" width="520" height="130" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="越靠内越&quot;纯&quot;：三层都是公开 API，可只用最里层自己搭，也可直接用最外层" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="80" y="460" width="640" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

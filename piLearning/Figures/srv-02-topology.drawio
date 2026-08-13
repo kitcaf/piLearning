@@ -1,0 +1,52 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="c1" value="CLI 工具" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="150" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="c2" value="IDE 插件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="130" width="150" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="c3" value="radius 云" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="220" width="150" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="srv" value="server&#10;supervisor：花名册 + 生死簿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="330" y="115" width="230" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="i1" value="pi --mode rpc（实例 A，cwd=~/proj1）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="40" width="300" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="i2" value="pi --mode rpc（实例 B，cwd=~/proj2）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="130" width="300" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="i3" value="pi --mode rpc（实例 C，…）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="220" width="300" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.2;" edge="1" parent="1" source="c1" target="srv">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" value="unix socket（IPC 请求）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c2" target="srv">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.8;" edge="1" parent="1" source="c3" target="srv">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.2;entryX=0;entryY=0.5;" edge="1" parent="1" source="srv" target="i1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e5" value="裸 RPC（stdio 子进程）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="srv" target="i2">
+          <mxGeometry x="0.6" relative="1" as="geometry">
+            <mxPoint y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.8;entryX=0;entryY=0.5;" edge="1" parent="1" source="srv" target="i3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="server 不理解 agent 语义：对上提供 IPC 六种请求，对下透传 RPC —— 带花名册的交换机" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="200" y="310" width="640" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,78 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="t1" value="AgentSessionEvent（时间序列）" style="text;html=1;fontSize=15;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="40" y="30" width="300" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="t2" value="chatContainer 的孩子们（空间结构）" style="text;html=1;fontSize=15;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="460" y="30" width="360" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev1" value="message_start（user）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="80" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp1" value="+ UserMessageComponent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="460" y="80" width="360" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev2" value="message_start（assistant）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="140" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp2" value="+ AssistantMessageComponent（流式态）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="460" y="140" width="360" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev3" value="message_update ×N" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="200" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp3" value="└ updateContent(partial)：原地更新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="500" y="200" width="320" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev4" value="content 中出现 toolCall" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="260" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp4" value="+ ToolExecutionComponent（pending）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="460" y="260" width="360" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev5" value="tool_execution_update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="320" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp5" value="└ 更新进度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="500" y="320" width="320" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev6" value="tool_execution_end" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="380" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp6" value="└ 定稿（成功 / 失败 / diff 渲染）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="500" y="380" width="320" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="ev7" value="message_end" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="440" width="300" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="cp7" value="流式组件定稿，不再变" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=15;align=left;spacingLeft=12;" vertex="1" parent="1">
+      <mxGeometry x="460" y="440" width="360" height="44" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev1" target="cp1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev2" target="cp2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev3" target="cp3">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev4" target="cp4">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev5" target="cp5">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev6" target="cp6">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ev7" target="cp7">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="note" value="投影规则：每条消息 / 每次工具调用 = 一个组件，事件驱动组件的创建与更新" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="140" y="510" width="580" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

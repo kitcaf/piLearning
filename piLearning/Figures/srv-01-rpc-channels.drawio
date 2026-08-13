@@ -1,0 +1,30 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="client" value="嵌入方 client&#10;（IDE / 脚本 / server）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="40" y="60" width="210" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="pi" value="pi --mode rpc&#10;（子进程）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="700" y="60" width="210" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" value="stdin ── 命令（每行一个 JSON，带 id）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=1;exitY=0.17;entryX=0;entryY=0.17;" edge="1" parent="1" source="client" target="pi">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint y="-12" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e2" value="stdout ── 响应（每命令一条，靠 id 配对）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#666666;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="pi" target="client">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint y="-12" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="e3" value="stdout ── 事件（持续流，AgentSessionEvent 原样序列化）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=13;fontColor=#b85450;strokeColor=#b85450;exitX=0;exitY=0.83;entryX=1;entryY=0.83;" edge="1" parent="1" source="pi" target="client">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint y="-12" as="offset"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="note" value="响应和事件复用同一条 stdout：客户端逐行解析，按 type 分流" style="text;html=1;fontSize=13;fontColor=#666666;align=center;" vertex="1" parent="1">
+      <mxGeometry x="155" y="300" width="640" height="30" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,69 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="caller" value="调用方（packages/agent 的循环）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;" vertex="1" parent="1">
+      <mxGeometry x="240" y="40" width="340" height="54" as="geometry"/>
+    </mxCell>
+    <mxCell id="models" value="Models（models.ts）&#10;厂商注册表 · 认证解析 · 请求分发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;" vertex="1" parent="1">
+      <mxGeometry x="240" y="150" width="340" height="64" as="geometry"/>
+    </mxCell>
+    <mxCell id="auth" value="auth/&#10;CredentialStore（串行 modify）&#10;声明式 resolve 链 · OAuth 双检刷新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=10;" vertex="1" parent="1">
+      <mxGeometry x="760" y="140" width="270" height="84" as="geometry"/>
+    </mxCell>
+    <mxCell id="provider" value="Provider（createProvider 工厂）&#10;模型目录：静态基线 + 动态覆盖&#10;按 model.api 分发协议" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;" vertex="1" parent="1">
+      <mxGeometry x="240" y="272" width="340" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="catalog" value="模型目录（生成的数据）&#10;models.generated.ts&#10;价格 / 窗口 / compat 标志&#10;来源：models.dev + 人工修正" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=10;" vertex="1" parent="1">
+      <mxGeometry x="760" y="262" width="270" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="api" value="Api 协议实现（api/*.ts，懒加载）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=17;fontStyle=1;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+      <mxGeometry x="110" y="410" width="600" height="170" as="geometry"/>
+    </mxCell>
+    <mxCell id="apiOut" value="出向翻译&#10;Context → 厂商请求体&#10;compat 标志分支" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=14;" vertex="1" parent="api">
+      <mxGeometry x="22" y="50" width="176" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="apiHttp" value="传输&#10;HTTP / SSE / WebSocket&#10;传输层重试（Retry-After）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=14;" vertex="1" parent="api">
+      <mxGeometry x="212" y="50" width="176" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="apiIn" value="入向翻译&#10;厂商流 → 12 种统一事件&#10;修复式 JSON 解析" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=14;" vertex="1" parent="api">
+      <mxGeometry x="402" y="50" width="176" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="vendors" value="30+ 厂商档案（providers/*.ts）&#10;每份 ≈ 50 行：id · baseUrl&#10;auth · 模型清单 · 协议引用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;align=left;spacingLeft=10;" vertex="1" parent="1">
+      <mxGeometry x="760" y="450" width="270" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="stream" value="AssistantMessageEventStream（统一事件流）&#10;for await 逐事件（流式 UI）· await result()（最终消息）&#10;错误即数据：error 事件载荷 = stopReason:&quot;error&quot; 的消息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1">
+      <mxGeometry x="160" y="640" width="500" height="90" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="caller" target="models">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1l" value="streamSimple(model, context, options)" style="text;html=1;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="425" y="106" width="280" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="models" target="provider">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2l" value="凭证已织入 options" style="text;html=1;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="425" y="228" width="180" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="provider" target="api">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3l" value="lazyApi：首次调用才 import" style="text;html=1;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+      <mxGeometry x="425" y="370" width="220" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="api" target="stream">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="models" target="auth">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="provider" target="catalog">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=1;exitY=0.7;entryX=0;entryY=0.5;" edge="1" parent="1" source="api" target="vendors">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
